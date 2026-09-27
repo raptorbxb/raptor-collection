@@ -31,7 +31,7 @@ La copie locale connaît l'adresse du repository GitHub grâce à `origin`. (inf
 
 GitHub ne sait pas où se trouvent mes copies locales.
 
-## Commandes Git
+## Commandes Git (ouvrir powershell dans raptor-collection)
 
 ### `git status`
 Permet de demander à Git quelles modifications ont été effectuées dans le dossier.
@@ -40,7 +40,13 @@ Permet de demander à Git quelles modifications ont été effectuées dans le do
 Permet de copier un repository GitHub sur mon ordinateur et de configurer le lien avec le repository distant.
 
 ### `git add`
-Ajoute des modifications à la prochaine version à enregistrer.
+Ajoute des modifications à la prochaine version à enregistrer. Exemple :
+git add index.html
+git add README.md
+
+### `git commit`
+Enregistre une version dans l'historique Git.
+On peut ajouter :  `-m "Texte descriptif"` pour ajouter une description au commit. 
 
 ### `git push`
 Permet d'envoyer mes commits locaux vers GitHub.
@@ -48,8 +54,12 @@ Permet d'envoyer mes commits locaux vers GitHub.
 ### `git pull`
 Permet de récupérer les modifications présentes sur GitHub.
 
-
+## Configuration de mon identité Git (locale)
+git config --global user.name "Romain"
+git config --global user.email "ton-email@example.com"
 
 ## À retenir
 Modifier un fichier localement ne modifie pas automatiquement GitHub, il faut push avec Git pour cela.
 Le passage de mes modifications vers GitHub se fait avec Git.
+
+
