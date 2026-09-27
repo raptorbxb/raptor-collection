@@ -15,12 +15,16 @@
 
     <a id="deezer">Deezer</a>    <!-- La balise <a> correspond à une définition d'hyperlink. Après l'Id, on écrit ce qui est affiché sur la page -->
     <a id="spotify">Spotify</a>
-    <a id="appleMusic">Apple Music</a>
+    <a id="applemusic">Apple Music</a>
     <a id="soundcloud">SoundCloud</a>
     <a id="clip">Clip</a>
 
+
     <script>  //<!-- les navigateurs comprennent qu'il faut exécuter du JavaScript après une balise HTML <script> -->
-        fetch("Albums/GrayGrey.json")    //fetch demande au navigateur de récupérer une ressource. Cela peut prendre un petit moment, d'où "then" après. 
+        const params = new URLSearchParams(window.location.search);  //window.location.search récupère la partie de l'URL située après "?", par exemple "id=album1", et la stocke dans params
+        const id = params.get("id");      //Ici on récupère uniquement la valeur de l'id à partir de params, par exemple "album1", et o, stock dans "id"
+
+        fetch("Albums/" + id + ".json")    //fetch demande au navigateur de récupérer une ressource. Cela peut prendre un petit moment, d'où "then" après. 
             .then(response => response.json())    //Then = Une fois que tu as reçu la réponse du serveur, interprète la en JSON. 
             .then(data => {                       //Then = Après l'interprétation de la réponse JSON, renomme la "data".
                 document.getElementById("album").textContent = data.album;    //Le JSON est désormais un objet appelé data, on peut donc appeler ses variables avec data.variable
@@ -31,8 +35,8 @@
 
                 document.getElementById("deezer").href = data.deezer;           //Pour les liens, .href modifie la destination du lien, (lien caché)   
                 document.getElementById("spotify").href = data.spotify;
-                document.getElementById("appleMusic").href = data.appleMusic;
-                document.getElementById("soundcloud").href = data.soundCloud;
+                document.getElementById("applemusic").href = data.applemusic;
+                document.getElementById("soundcloud").href = data.soundcloud;
                 document.getElementById("clip").href = data.clip;
             });
     </script>

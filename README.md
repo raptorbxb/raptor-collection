@@ -47,6 +47,7 @@ git add README.md
 ### `git commit`
 Enregistre une version dans l'historique Git.
 On peut ajouter :  `-m "Texte descriptif"` pour ajouter une description au commit. 
+git commit -a -m "..." permet de commit directement les fichiers déjà suivi, sans passer par un git add. Attention cependant, ça ne prend pas en compte les nouveaux fichiers. 
 
 ### `git push`
 Permet d'envoyer mes commits locaux vers GitHub.
