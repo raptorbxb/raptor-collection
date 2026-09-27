@@ -20,7 +20,7 @@
     <a id="clip">Clip</a>
 
     <script>  //<!-- les navigateurs comprennent qu'il faut exécuter du JavaScript après une balise HTML <script> -->
-        fetch("albums/GrayGrey.json")    //fetch demande au navigateur de récupérer une ressource. Cela peut prendre un petit moment, d'où "then" après. 
+        fetch("Albums/GrayGrey.json")    //fetch demande au navigateur de récupérer une ressource. Cela peut prendre un petit moment, d'où "then" après. 
             .then(response => response.json())    //Then = Une fois que tu as reçu la réponse du serveur, interprète la en JSON. 
             .then(data => {                       //Then = Après l'interprétation de la réponse JSON, renomme la "data".
                 document.getElementById("album").textContent = data.album;    //Le JSON est désormais un objet appelé data, on peut donc appeler ses variables avec data.variable
