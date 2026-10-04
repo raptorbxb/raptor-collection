@@ -9,6 +9,8 @@
     <h1 id="album"></h1>
     <h2 id="artist"></h2>
 
+    <img id="cover"></h2>     <!-- La balise <img> permet d'afficher une image. -->
+
     <p id="date"></p>
     <p id="albumlength"></p>
     <p id="tracks"></p>
@@ -24,12 +26,12 @@
         const params = new URLSearchParams(window.location.search);  //window.location.search récupère la partie de l'URL située après "?", par exemple "id=album1", et la stocke dans params
         const id = params.get("id");      //Ici on récupère uniquement la valeur de l'id à partir de params, par exemple "album1", et o, stock dans "id"
 
-        fetch("Albums/" + id + ".json")    //fetch demande au navigateur de récupérer une ressource. Cela peut prendre un petit moment, d'où "then" après. 
+        fetch("Albums/" + id + ".json")    //fetch demande au navigateur de récupérer une ressource. Cela peut prendre un petit moment, d'où "then" après. Ici la ressources est variabilisée graçe à l'Id passé dans l'Url
             .then(response => response.json())    //Then = Une fois que tu as reçu la réponse du serveur, interprète la en JSON. 
             .then(data => {                       //Then = Après l'interprétation de la réponse JSON, renomme la "data".
-                document.getElementById("album").textContent = data.album;    //Le JSON est désormais un objet appelé data, on peut donc appeler ses variables avec data.variable
-                document.getElementById("artist").textContent = data.artist;  //"document" représente la page HTML actuelle  
-                document.getElementById("date").textContent = data.date;      //On assigne à l'Id de la page HTML actuelle le contenu de la variable du JSON (data.xxxx)
+                document.getElementById("album").textContent = data.album;      //Le JSON est désormais un objet appelé data, on peut donc appeler ses variables avec data.variable
+                document.getElementById("artist").textContent = data.artist;    //"document" représente la page HTML actuelle  
+                document.getElementById("date").textContent = data.date;        //On assigne à l'Id de la page HTML actuelle le contenu de la variable du JSON (data.xxxx)
                 document.getElementById("albumlength").textContent = data.albumlength;
                 document.getElementById("tracks").textContent = data.tracks;
 
@@ -38,6 +40,8 @@
                 document.getElementById("applemusic").href = data.applemusic;
                 document.getElementById("soundcloud").href = data.soundcloud;
                 document.getElementById("clip").href = data.clip;
+
+                document.getElementById("cover").src = data.cover;              //Pour les images, .src permet de définir la source de l'image sui sera affichée via une balise HTML <img>
             });
     </script>
 
