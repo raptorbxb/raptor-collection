@@ -43,6 +43,7 @@ Permet de copier un repository GitHub sur mon ordinateur et de configurer le lie
 Ajoute des modifications à la prochaine version à enregistrer. Exemple :
 git add index.html
 git add README.md
+Pour ajouter toutes les nouveautés en même temps : `git add .` 
 
 ### `git commit`
 Enregistre une version dans l'historique Git.

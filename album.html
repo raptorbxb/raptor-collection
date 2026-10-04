@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Album</title>  <!-- Affiche un Titre "Album" sur la page -->
 </head>
 
 <body>
 
-    <h1 id="album"></h1>
-    <h2 id="artist"></h2>
+    <header>
+        <h1 id="album"></h1>
+        <h2 id="artist"></h2>
+    </header>
 
-    <img id="cover"></h2>     <!-- La balise <img> permet d'afficher une image. -->
+    <main>
+        <img id="cover">     <!-- La balise <img> permet d'afficher une image. -->
 
-    <p id="date"></p>
-    <p id="albumlength"></p>
-    <p id="tracks"></p>
+        <p id="info">
+            <span id="year"></span> -
+            <span id="albumlength"></span> -
+            <span id="tracks"></span>
+        </p>
 
-    <a id="deezer">Deezer</a>    <!-- La balise <a> correspond à une définition d'hyperlink. Après l'Id, on écrit ce qui est affiché sur la page -->
-    <a id="spotify">Spotify</a>
-    <a id="applemusic">Apple Music</a>
-    <a id="soundcloud">SoundCloud</a>
-    <a id="clip">Clip</a>
+        <section id="links">
 
+            <a id="deezer">Deezer</a>    <!-- La balise <a> correspond à une définition d'hyperlink. Après l'Id, on écrit ce qui est affiché sur la page -->
+            <a id="spotify">Spotify</a>
+            <a id="applemusic">Apple Music</a>
+            <a id="soundcloud">SoundCloud</a>
+          
+        </section>
+
+        <section id="clip">
+            <iframe id="youtube"></iframe>
+        </section>
+    </main>
 
     <script>  //<!-- les navigateurs comprennent qu'il faut exécuter du JavaScript après une balise HTML <script> -->
         const params = new URLSearchParams(window.location.search);  //window.location.search récupère la partie de l'URL située après "?", par exemple "id=album1", et la stocke dans params
