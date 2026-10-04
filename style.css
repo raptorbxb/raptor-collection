@@ -36,10 +36,11 @@ main {
 }
 
 #links {
-    margin: 0px 0 25px;
+    margin: 0px auto 25px;
+    max-width: 400px;
+    width: 100%;
     display: flex;              /* Transforme #links en conteneur Flexbox : ses éléments enfants sont automatiquement organisés selon les règles Flexbox. */
-    flex-wrap: wrap;            /* Autorise les éléments à passer à la ligne suivante s'ils n'ont plus assez de place sur la même ligne. (sur un petit écran par exemple) */
-    justify-content: center;
+    flex-direction: column;            /* Autorise les éléments à passer à la ligne suivante s'ils n'ont plus assez de place sur la même ligne. (sur un petit écran par exemple) */
     gap: 10px;
 }
 

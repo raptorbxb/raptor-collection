@@ -3,6 +3,7 @@
 
 <head>                      <!-- La balise head contient les informations pour que la navigateur prépare la page -->
     <title>Album</title>                        <!-- Affiche un Titre "Album" sur l'onglet de la page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- La ligne viewport permet d'ajuster la largeur de la page à la taille réelle de l'écran  -->
     <link rel="stylesheet" href="style.css">    <!-- Charge la feuille de style style.css -->
 </head>
 
@@ -54,9 +55,12 @@
                 document.getElementById("spotify").href = data.spotify;
                 document.getElementById("applemusic").href = data.applemusic;
                 document.getElementById("soundcloud").href = data.soundcloud;
-                document.getElementById("youtube").href = data.clip;
 
-                document.getElementById("cover").src = data.cover;              //Pour les images, .src permet de définir la source de l'image sui sera affichée via une balise HTML <img>
+                //iFrame Youtube
+                const videoId = data.clip.split("/").pop().split("?")[0];                              //split("/").pop().split("?")[0] Isole l'identifiant video contenu dans le lien
+                document.getElementById("youtube").src ="https://www.youtube.com/embed/" + videoId;    //On reformule le lien avec embed pour faire fonctionner l'aperç youtube
+
+                document.getElementById("cover").src = data.cover;              //Pour les images, .src permet de définir la source de l'image qui sera affichée via une balise HTML <img>
             });
     </script>
 
