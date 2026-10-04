@@ -1,0 +1,52 @@
+body {                      /*Styles appliqués à "Body", donc styles généraux */
+    margin: 0;                          /* Supprime la marge extérieure par défaut ajoutée par le navigateur. */
+    padding: 30px 20px;                 /* Ajoute 30 px d'espace en haut et en bas, et 20 px à gauche et à droite. */
+    font-family: Arial, sans-serif;     /* Définit Arial comme police principale, avec une police générique de secours si Arial n'est pas disponible. */
+    text-align: center;                 /* Centre horizontalement le texte contenu dans la page. */
+    background: #f5f5f5;              /* Définit la couleur de fond de la page. */
+    color: #111;                      /* Définit la couleur du texte par défaut. */
+}
+
+main {
+    max-width: 500px;       /* Empêche le contenu de <main> de dépasser une largeur de 500 px. */
+    margin: auto;           /* Centre horizontalement <main> lorsque sa largeur est inférieure à celle de la fenêtre. */
+}
+
+#album {
+    margin: 0;              /* Supprime les marges par défaut du titre. */
+    font-size: 32px;
+}
+
+#artist {
+    margin: 8px 0 25px;     /* Ajoute 8 px en haut, 0 px à gauche et à droite, et 25 px en bas. */
+    font-size: 20px;
+    font-weight: normal;    /* Utilise une épaisseur de police normale plutôt que du gras. */
+}
+
+#cover {
+    width: 100%;            /* Demande à l'image de prendre 100 % de la largeur disponible de son conteneur. */
+    max-width: 400px;       /* Empêche cependant l'image de dépasser 400 px de largeur. */
+    display: block;         /* Transforme l'image en élément de type block, ce qui facilite notamment son positionnement. */
+    margin: auto;           /* Centre horizontalement l'image dans son conteneur. */
+}
+
+#info {
+    margin: 15px 0 25px;
+    font-size: 16px;
+}
+
+#links {
+    margin: 0px 0 25px;
+    display: flex;              /* Transforme #links en conteneur Flexbox : ses éléments enfants sont automatiquement organisés selon les règles Flexbox. */
+    flex-wrap: wrap;            /* Autorise les éléments à passer à la ligne suivante s'ils n'ont plus assez de place sur la même ligne. (sur un petit écran par exemple) */
+    justify-content: center;
+    gap: 10px;
+}
+
+#links a {                      /* Applique les règles aux balises <a> contenues dans l'élement #links */
+    padding: 12px 18px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
